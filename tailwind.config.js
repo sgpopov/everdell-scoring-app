@@ -1,10 +1,11 @@
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+/** @type {import('tailwindcss/types').Config} */
+let config = {
+  content: ['./src/**/*.vue', './*.html'],
+  plugins: [
+    // require('@tailwindcss/forms'),
+    // require('@tailwindcss/typography'),
+    // require('@headlessui/tailwindcss'),
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
 }
+
+module.exports = config

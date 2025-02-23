@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "everdell-scoring-app",
   "version": "0.0.1",
   "description": "A scoring application for the board game Everdell, built with Vue 3, Tailwind CSS, and Pinia.",
@@ -9,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.2.0",
     "@tailwindcss/vite": "^4.0.8",
     "pinia": "^2.0.0",
     "tailwindcss": "^4.0.8",
