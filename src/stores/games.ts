@@ -40,5 +40,9 @@ export const useGamesStore = defineStore('games', {
 
       return game;
     },
+
+    findById(id: string) {
+      return this.games.find((game) => game.id === id);
+    },
   },
 });
