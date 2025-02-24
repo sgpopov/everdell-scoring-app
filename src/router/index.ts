@@ -1,11 +1,21 @@
 import { createWebHistory, createRouter } from 'vue-router';
 
-import HomeView from '@/views/HomeView.vue';
-import NewGameView from '@/views/NewGameView.vue'
-
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/new-game', component: NewGameView },
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('@/views/HomeView.vue'),
+  },
+  {
+    path: '/games/new',
+    name: 'games.create',
+    component: () => import('@/views/NewGameView.vue'),
+  },
+  {
+    path: '/games/:id',
+    name: 'games.details',
+    component: () => import('@/views/GameDetails.vue'),
+  },
 ];
 
 export const router = createRouter({

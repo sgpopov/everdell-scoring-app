@@ -7,8 +7,10 @@
 <script setup lang="ts">
 import { computed, defineProps } from 'vue';
 
+type LinkAddress = string | { name: string; params: Record<string, unknown> };
+
 const props = defineProps<{
-  to: string;
+  to: LinkAddress;
   type?: 'primary' | 'secondary' | 'danger';
 }>();
 
