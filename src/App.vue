@@ -16,7 +16,9 @@
       </div>
 
       <div class="flex flex-1 items-center justify-end gap-x-6">
-        <Link :to="{ name: 'games.create' }" type="primary">New game</Link>
+        <NavigationLink :to="{ name: 'games.create' }" type="primary">
+          New game
+        </NavigationLink>
       </div>
     </nav>
   </header>
@@ -26,5 +28,5 @@
 </template>
 
 <script setup>
-import Link from '@/components/Link.vue';
+import NavigationLink from '@/components/NavigationLink.vue';
 </script>

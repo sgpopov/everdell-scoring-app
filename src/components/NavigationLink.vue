@@ -6,11 +6,10 @@
 
 <script setup lang="ts">
 import { computed, defineProps } from 'vue';
-
-type LinkAddress = string | { name: string; params: Record<string, unknown> };
+import type { RouteLocationRaw } from 'vue-router';
 
 const props = defineProps<{
-  to: LinkAddress;
+  to: RouteLocationRaw;
   type?: 'primary' | 'secondary' | 'danger';
 }>();
 
