@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps } from 'vue';
+import { computed } from 'vue';
 import type { RouteLocationRaw } from 'vue-router';
 
 const props = defineProps<{
@@ -22,7 +22,7 @@ const computedClass = computed(() => {
     case 'danger':
       return 'text-red-500 hover:text-red-700';
     default:
-      return 'text-black hover:text-gray-700';
+      return '';
   }
 });
 </script>

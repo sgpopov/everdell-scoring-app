@@ -21,3 +21,7 @@ export type Game = {
   players: GamePlayer[];
   startedAt: string;
 };
+
+export type PlayerScore = Player & {
+  score: number;
+};

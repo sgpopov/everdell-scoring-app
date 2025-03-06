@@ -16,6 +16,11 @@ const routes = [
     name: 'games.details',
     component: () => import('@/views/GameDetails.vue'),
   },
+  {
+    path: '/games/:id/score/:score',
+    name: 'games.score',
+    component: () => import('@/views/GameScoreView.vue'),
+  },
 ];
 
 export const router = createRouter({

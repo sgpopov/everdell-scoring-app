@@ -33,7 +33,16 @@
                 <td
                   class="py-4 pl-4 text-sm font-medium whitespace-nowrap text-gray-900 sm:pl-0"
                 >
-                  <div class="flex items-center gap-x-2">
+                  <NavigationLink
+                    :to="{
+                      name: 'games.score',
+                      params: {
+                        id: gameId,
+                        score: score.key,
+                      },
+                    }"
+                    class="flex items-center gap-x-2"
+                  >
                     <img
                       v-if="score.icon"
                       class="max-w-6"
@@ -41,7 +50,7 @@
                       alt=""
                     />
                     <span>{{ score.title }}</span>
-                  </div>
+                  </NavigationLink>
                 </td>
                 <td
                   v-for="playerScore in score.scores"
@@ -85,25 +94,34 @@ import { TrophyIcon } from '@heroicons/vue/24/outline';
 import type { BaseGameScores } from '@/types';
 import { baseGameScore } from '@/data';
 import { useGamesStore } from '@/stores/games';
+import NavigationLink from '@/components/NavigationLink.vue';
+import { computed } from 'vue';
+import { router } from '@/router';
 
 const route = useRoute();
 const gamesStore = useGamesStore();
 
 const gameId: string = route.params.id as string;
-const game = gamesStore.findById(gameId);
+const game = gamesStore.getById(gameId);
 
-const tableContent = baseGameScore.map((score) => {
-  return {
-    key: score.key,
-    title: score.title,
-    icon: score.icon,
-    scores: game?.players.map((player) => {
-      return {
-        key: `${score.key}-${player.name}`,
-        value: player.scores[score.key as keyof BaseGameScores],
-      };
-    }),
-  };
+if (!game) {
+  router.push('/');
+}
+
+const tableContent = computed(() => {
+  return baseGameScore.map((score) => {
+    return {
+      key: score.key,
+      title: score.title,
+      icon: score.icon,
+      scores: game?.players.map((player) => {
+        return {
+          key: `${score.key}-${player.name}`,
+          value: player.scores[score.key as keyof BaseGameScores],
+        };
+      }),
+    };
+  });
 });
 
 const iconModules = import.meta.glob('/src/assets/**/*.png', {
