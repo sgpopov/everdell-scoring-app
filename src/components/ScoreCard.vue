@@ -72,7 +72,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { ArrowLeftCircleIcon } from '@heroicons/vue/24/outline';
 import NavigationLink from '@/components/NavigationLink.vue';
 import InputField from '@/components/InputField.vue';

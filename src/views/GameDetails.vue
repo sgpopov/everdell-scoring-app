@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 sm:px-6 lg:px-8">
+  <div class="lg:mt-5 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mt-8 flow-root">
       <div class="sm:flex-auto">
         <h1 class="text-base font-semibold text-gray-900">Score</h1>
