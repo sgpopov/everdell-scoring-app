@@ -5,14 +5,14 @@
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
-        <a href="/" class="-m-1.5 p-1.5">
+        <NavigationLink :to="{ name: 'home' }" class="-m-1.5 p-1.5">
           <span class="sr-only">Everdell Scoring App</span>
           <img
             class="h-8 w-auto"
             src="./assets/images/logo.png"
             alt="Everdell Logo"
           />
-        </a>
+        </NavigationLink>
       </div>
 
       <div class="flex flex-1 items-center justify-end gap-x-6">
